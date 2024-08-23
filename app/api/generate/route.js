@@ -39,21 +39,7 @@ export async function POST(req){
         ],
       })
       const flashcards = JSON.parse(completion.response.text());
+      console.log(flashcards)
       // Return the flashcards as a JSON response
       return NextResponse.json(flashcards.flashcards);
-// };
-// export async function POST(req) {
-//     const data = await req.text()
-//     const model = genAI.getGenerativeModel({
-//                 model: "gemini-1.5-flash",
-//                 generationConfig: {  maxOutputTokens: 8000, systemInstruction: systemPrompt }
-//               })
-//     const result = await model.generateContent(data)
-//     console.log(result.response.text())
-  
-//     // Parse the JSON response from the GenAI API
-//     const flashcards = JSON.parse(result.response.text())
-  
-//     // Return the flashcards as a JSON response
-//     return NextResponse.json(flashcards)
   }
